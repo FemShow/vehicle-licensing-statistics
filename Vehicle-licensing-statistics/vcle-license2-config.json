@@ -1,0 +1,57 @@
+{
+  "$schema": "https://purl.org/csv-cubed/qube-config/v1",
+  "title": "All registered vehicles in Great Britain; from 1994 Quarter 4 (end December)",
+  "description": "All registered vehicles in Great Britain; from 1994 Quarter 4 (end December)",
+  "creator": "https://www.gov.uk/government/organisations/driver-and-vehicle-licensing-agency",
+  "publisher": "https://www.gov.uk/government/organisations/driver-and-vehicle-licensing-agency",
+  "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+  "keywords": [
+    "cars",
+    "buses",
+    "vans",
+    "lorries",
+    "motorcycles",
+    "licence",
+    "license",
+    "licensing"
+  ],
+  "columns": {
+    "BodyType": false,
+    "Make": {
+      "type": "dimension"
+    },
+    "GenModel": false,
+    "Model": false,
+    "Fuel": false,
+    "Period": {
+      "type": "dimension",
+      "from_template": "government-quarter"
+    },
+    "Licensed": {
+        "type": "observations",
+        "measure": {
+          "label": "Licensed",
+          "description": "Vehicles registered at the end of the quarter by licence status, body type, make, generic model and model: Great Britain .",
+          "from_existing": "https://purl.org/csv-cubed/resources/measures#scale"
+        },
+        "data_type": "integer",
+        "unit": {
+          "label": "Number",
+          "from_existing": "http://qudt.org/vocab/unit/NUM"
+        }
+      },
+    "SORN": {
+        "type": "observations",
+        "measure": {
+          "label": "SORN",
+          "description": "Vehicles statutarily parked off-rosd at the end of the quarter by licence status, body type, make, generic model and model: Great Britain .",
+          "from_existing": "https://purl.org/csv-cubed/resources/measures#scale"
+        },
+        "data_type": "integer",
+        "unit": {
+          "label": "Number",
+          "from_existing": "http://qudt.org/vocab/unit/NUM"
+        }
+      }
+  }
+}
